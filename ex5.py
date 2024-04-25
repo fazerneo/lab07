@@ -16,9 +16,9 @@ while True:
     
     # Call menu and store the user input
     user_input = menu()
-
-    ''' Option 1. Add Staff Details '''    
+    
     if user_input == 1:
+        ''' _________Option 1. Add Staff Details_________ '''
         # Open file in append mode so as to not overwrite data
         #create a writer object, take user input and store them in a list, then writerow to file
         with open("staff_details.csv", "a+", newline="", encoding="utf-8-sig") as csvfile:
@@ -34,9 +34,10 @@ while True:
             
             print("Record added successfully")
 
-    ''' Option 2. View Staff Details '''
     elif user_input == 2:
+        ''' _________Option 2. View Staff Details_________ '''
         # Open file in read mode, create a reader object
+        # Iterate through reader object and print the data using indexing
         with open("staff_details.csv", newline="", encoding="utf-8-sig") as csvfile:
             reader = csv.reader(csvfile)
             print()
@@ -44,5 +45,8 @@ while True:
                 print(col[0],",", col[1],",", col[2],",", col[3])
 
     elif user_input == 3:
+        ''' _________Option 3. Exit Program_________ '''
+        print()
+        print("Thank You for using the program")
         break
     
